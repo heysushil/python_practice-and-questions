@@ -5,9 +5,6 @@
 # name ek varaibalel hai is ke andar python jo ki ek value hai wo assign ki gai hai.
 
 
-from curses import has_ic
-
-
 name = 'Python'
 
 # print() ek function hai ya method
