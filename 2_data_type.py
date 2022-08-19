@@ -27,6 +27,8 @@ print('Name var type: ', type(name))
 # Home work
 # Github account: 
     # 1 repository create karna hai -> isme python code upload karna hai.
+# Learn about git
+# Diff b/w git and github
 # stackover flow account 
 # Special char ke name: () [] {} ,. : ; "" '' * # / \ | & $
 
