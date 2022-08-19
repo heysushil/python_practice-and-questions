@@ -15,3 +15,7 @@
 # Vs code them color chage:
 
 1. go to setting (left bootom corner par setting icon hai) -> click color theme -> `monokai`
+
+# Download `Git` to connect with `GitHub` for version controlling:
+
+1. Link: [Download Git](https://git-scm.com/downloads)
