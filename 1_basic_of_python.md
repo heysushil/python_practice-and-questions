@@ -8,5 +8,3 @@
     1. number se start nahi hoga
     1. special char se start nahi hoga
 1. Data Types
-
-
