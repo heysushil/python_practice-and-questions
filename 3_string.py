@@ -74,7 +74,6 @@ print('upper: ', name.upper())
 new_name = 'how are you?'
 print(name,new_name) 
 
-
 # Home work
     # stirng array related indexing / slicing ke example run karne hai 
     # string related sabhi method ke print case banae hain aur comment me define karna hai
