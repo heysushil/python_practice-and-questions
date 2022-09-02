@@ -13,6 +13,10 @@ ghar_wale = daksh_pizza_le_aaoo(999)
 print('\nDelivered: ', ghar_wale)
 
 
+# def localFun():
+#     a, b, c, d = 1, 2, 3, 4
+
+
 
 # Programs:
 
