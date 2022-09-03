@@ -55,3 +55,7 @@ print('\ntupletolist: ', type(tupletolist))
 
 # Dict / set
 
+
+
+# Programming me 4 works hote hai:
+# CREATE | VIEW | UPDATE | DELETE

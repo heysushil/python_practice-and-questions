@@ -1,8 +1,19 @@
 # for keyword
 
+# for loop syntex:
+# for this in that:
+#     this is in that
+
+
+# for single_value_of_collection in collection:
+#     access single value here single_value_of_collection
+
 string_valule = 'Hi Dakhs how are you?'
 
 # i intilize with 0 for showing index number on print in side for loop
+
+# this is this
+
 i = 0
 for val in string_valule:
     # 0 : H
