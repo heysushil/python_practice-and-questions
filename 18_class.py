@@ -1,4 +1,52 @@
+# About class flow:
+
+
+# 1. class define
+#     a. arguments define 
+#     b. define methods/function 
+        # 1step define 
+        #     a kya argument pass kar reaha hai 
+        #         1 kitne argument pass 
+        #             a. single, multipal, multipal arg as single argumen recive using * **
+        #     b. function body logic 
+        # 2step call fucntion 
+        #     a. value pass karna 
+        #     b. responce recive 
+    # c. class object arguments
+    #     a. __init__() ke thourgh 
+
+
+# 2. class ka object 
+
+
+
 # Python Classes and Objects
+
+# class name me first character capital hoga
+
+# ye class ko define kiya gaya hai
+class MyFirstClass:
+    print('\nHello my first class')
+
+    def myFirstMethod():
+        print('\nHello my first method.')
+    
+    def myFirstMethod1(a, b):
+        return a*b
+        # print('\nHello my first method.')
+
+# class ka object bana rahe hai
+# obj = new ClassName();
+
+# myFirstObject objet ke thorught hum class ko access kar sakte hain.
+# Matlab ki hum class ke variables aur mehtods ko call kar sakte hai.
+myFirstObject = MyFirstClass
+myFirstObject.myFirstMethod()
+
+result = myFirstObject.myFirstMethod1(100, 10)
+print('\nResult: ', result)
+# myFirstObject.myFirstMethod()
+
 
 # Python is an object oriented programming language.
 # Almost everything in Python is an object, with its properties and methods.
