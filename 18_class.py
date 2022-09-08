@@ -56,8 +56,53 @@ print('\nResult: ', result)
 # Create a Class
 # To create a class, use the keyword class:
 
+# School name ki class hai jisme koi bhi student aa raha hai to hum check karenge ki wo student school me padhta hai ya nahi then hum usko entry denge.
+
+class School:
+    # define method to show message to student when wants to enter in shcool.
+    def entry_pass():
+        message = '''
+        ----------------------------
+            Hello Student
+        ----------------------------
+        What is your roll number ?
+        ----------------------------
+        '''
+        print(message)
+
+        existing_roll_number = [1,2,3,4,5,6,7,8,9,100]
+        
+        # Student roll number input
+        roll_number = input('\nEnter your roll number: ')
+        # Condtion to veryfy student
+        # print(int(roll_number) in existing_roll_number)
+        # print(existing_roll_number.index(int(roll_number)))
+        
+        if int(roll_number) in existing_roll_number:
+            print('\nWelcome')
+        elif int(roll_number) not in existing_roll_number:
+            print('\nNo entry')
+        else:
+            print('\nWrong roll number.')
+            
+# School.entry_pass()
+
+class SumUsingConstruct():
+
+    # define constructer to pass class properties to mehtos.
+    def __init__(self, a, b):
+        # super().__init__()
+        self.a = a
+        self.b = b
+
+    def sum_numbers(self):
+        result = self.a + self.b 
+        print('\nResult: ', result)
 
 # Create Object
+sumOBJ = SumUsingConstruct(10, 50)
+sumOBJ.sum_numbers()
+
 # Now we can use the class named MyClass to create objects:
 
 
