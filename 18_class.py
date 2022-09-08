@@ -95,13 +95,13 @@ class SumUsingConstruct():
         self.a = a
         self.b = b
 
-    def sum_numbers(self):
+    def sum_numbers(self, personalVar):
         result = self.a + self.b 
-        print('\nResult: ', result)
+        print('\nResult: ', result, personalVar)
 
 # Create Object
 sumOBJ = SumUsingConstruct(10, 50)
-sumOBJ.sum_numbers()
+sumOBJ.sum_numbers('Aur mazza aya')
 
 # Now we can use the class named MyClass to create objects:
 
