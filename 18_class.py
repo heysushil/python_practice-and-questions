@@ -40,11 +40,11 @@ class MyFirstClass:
 
 # myFirstObject objet ke thorught hum class ko access kar sakte hain.
 # Matlab ki hum class ke variables aur mehtods ko call kar sakte hai.
-myFirstObject = MyFirstClass
-myFirstObject.myFirstMethod()
+# myFirstObject = MyFirstClass
+# myFirstObject.myFirstMethod()
 
-result = myFirstObject.myFirstMethod1(100, 10)
-print('\nResult: ', result)
+# result = myFirstObject.myFirstMethod1(100, 10)
+# print('\nResult: ', result)
 # myFirstObject.myFirstMethod()
 
 
@@ -95,17 +95,34 @@ class SumUsingConstruct():
         self.a = a
         self.b = b
 
-    def sum_numbers(self, personalVar):
+    def sum_numbers(self):
         result = self.a + self.b 
         print('\nResult: ', result, personalVar)
 
 # Create Object
-sumOBJ = SumUsingConstruct(10, 50)
-sumOBJ.sum_numbers('Aur mazza aya')
+# sumOBJ = SumUsingConstruct(10, 50)
+# sumOBJ.sum_numbers('Aur mazza aya')
 
 # Now we can use the class named MyClass to create objects:
 
+# Creata a method which accepts multipal values which method can't control.
+def reciveMultipalValues(*values):
+    print('\nAll accepted values: ', values, '\n')
 
+reciveMultipalValues(1,2,3,4,5,6,7,8,9)
+
+# Convert the function into class
+class ReciveMultipalValues:
+
+    def __init__(self, *values):
+        self.values = values
+
+    def reciveMultipalValues(self):
+        print('\nAll accepted values in class via cunstructer: ', self.values, '\n')
+
+reciveOBJ = ReciveMultipalValues(1,2,3,4,5,6,7,8,9)
+del reciveOBJ
+reciveOBJ.reciveMultipalValues()
 
 # The __init__() Function
 # All classes have a function called __init__(), which is always executed when the class is being initiated.
@@ -121,8 +138,7 @@ sumOBJ.sum_numbers('Aur mazza aya')
 # Modify Object Properties
 
 
-# Delete Object Properties
-
+# Delete Object Properties: del
 
 # Delete Objects
 
