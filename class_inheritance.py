@@ -1,8 +1,5 @@
 # Parent aur child
 
-from types import ModuleType
-
-
 class ParentClass:
     def __init__(self, fatherName, motherName):
         self.father = fatherName
@@ -56,12 +53,12 @@ class ChildClass(ParentClass):
         self.ayseHiFunctionBanaDiay()
 
 # Create child class object to pass requerd arguemt and call related method
-father = 'Ram'
-mohter = 'Sita'
-child = 'Love','Kush'
-childObj = ChildClass(father, mohter, child)
-# call method
-childObj.parentIntroduction()
+# father = 'Ram'
+# mohter = 'Sita'
+# child = 'Love','Kush'
+# childObj = ChildClass(father, mohter, child)
+# # call method
+# childObj.parentIntroduction()
 # childObj.childIntroduction()
 
 
