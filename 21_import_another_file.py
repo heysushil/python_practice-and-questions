@@ -41,3 +41,10 @@ from class_inheritance import ParentClass as para
 obivan = para('Ram','Sita')
 # para()
 obivan.parentIntroduction()
+
+
+class CheckData:
+    # pf(9999)
+    print('Check this output: ', pf(9999))
+
+CheckData
