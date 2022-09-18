@@ -1,5 +1,7 @@
 # Load mysql library
 import mysql.connector as con 
+# Import lib for showing db table data on table formate
+from beautifultable import BeautifulTable
 
 # lets create connection with mysql
 # for connecting Python with MySql need to have 3 details of mysql server
@@ -14,7 +16,7 @@ db = con.connect(
     password="",
     database="pytest"
 )
-print('\nChekc connection: ', db)
+# print('\nChekc connection: ', db)
 
 # get cursor object to run crud:
 create = db.cursor(buffered=True)
@@ -63,9 +65,30 @@ create.execute(query)
 # for table in create:
 #     print('\nTable Name: ', table)
 
+# Message
+def option():
+    print("""
+    Choose Options:
+    1. Insert New Expence
+    2. Read All Expence
+    3. Update Any Expence
+    4. Delete Any Expence
+    5. Exit
+    """)
+    user_input = input('\nEnter your option: ')
+    if user_input == '1':
+        insert_expence()
+    elif user_input == '2':
+        read_expencs()
+    elif user_input == '3':
+        update_expencs()
+    elif user_input == '4':
+        delete_expencs()
+    elif user_input == '5':
+        print('\nExit')
 
 # Let insert daily expence
-def dailey_expence():
+def insert_expence():
     things = input('\nEntery Thing name: ')
     price = input('\nEntery price name: ')
     name = input('\nEntery your name: ')
@@ -77,20 +100,63 @@ def dailey_expence():
     create.execute(query)
     # # Use commit() method for inserting or updateing data
     db.commit()
+    option()
 
 # dailey_expence()
 
 # Check all expence details
-def check_expencs():
+def read_expencs():
     print('\nAll Expence Details:')
-    create.execute("SELECT * FROM monthly_expence")
+    create.execute("SELECT * FROM monthly_expence ORDER BY id DESC")
     # For fetching all data form db table use fetchall() method
     all_data = create.fetchall()
+
+    # Create beauttable obj
+    bt = BeautifulTable()
+    # Check lenght of rows
+    bt.column_headers = ['No','ID','Thing','Price','Name','Date']
+    i=1
     for row in all_data:
-        print(row) 
+        print(row)
+        add_no = list(row)
+        add_no.insert(0, i)
+        bt.append_row(add_no)
+        i+=1
 
-check_expencs()
+    print(bt)
+    # option()
 
+def update_expencs():
+    print('\n Choose which entry you want to update?')
+    # Call read expence fucntion to show all existing records
+    read_expencs()
+    # Get user input for expence id
+    get_id = input('\nEnter expence ID. ')
+    updated_price = input('\nEnter new price. ')
+    query = f"UPDATE monthly_expence SET price={updated_price} WHERE id={get_id}"
+    create.execute(query)
+    db.commit()
+    print('This',create.rowcount,'record is updated.')
+    read_expencs()
+    option()
+
+def delete_expencs():
+    print('\n Choose which entry you want to delete?')
+    # Call read expence fucntion to show all existing records
+    read_expencs()
+    # Get user input for expence id
+    get_id = input('\nEnter expence no. ')
+    query = f"DELETE FROM monthly_expence WHERE id={get_id}"
+    create.execute(query)
+    db.commit()
+    print('This',create.rowcount,'record is deleted.')
+    read_expencs()
+    option()
+
+option()
+# a = [1,2,3,4]
+# a.insert(4, 5)
+# print(a)
 
 # Home-work
 # 1. Show table data in right formate.
