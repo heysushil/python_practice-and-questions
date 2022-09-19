@@ -1,4 +1,5 @@
 # Load mysql library
+import datetime
 import mysql.connector as con 
 # Import lib for showing db table data on table formate
 from beautifultable import BeautifulTable
@@ -60,10 +61,10 @@ query = """CREATE TABLE IF NOT EXISTS monthly_expence_1(
 create.execute(query)
 
 # Check all existing tables:
-# create.execute("SHOW TABLES")
-# print('\nCheck all Tables:')
-# for table in create:
-#     print('\nTable Name: ', table)
+create.execute("SHOW TABLES")
+print('\nCheck all Tables:')
+for table in create:
+    print('\nTable Name: ', table)
 
 # Message
 def option():
@@ -153,10 +154,33 @@ def delete_expencs():
     read_expencs()
     option()
 
-option()
-# a = [1,2,3,4]
-# a.insert(4, 5)
-# print(a)
+def view_data(query_data, header_title, title='View Details'):
+    print('\n',title)
+    create.execute(query_data)
+    all_data = create.fetchall()
+
+    # Create beauttable obj
+    bt = BeautifulTable()
+    # Check lenght of rows
+    # print(all_data);exit()
+    bt.column_headers = header_title
+    i=1
+    for row in all_data:
+        datee = datetime.datetime.now()
+        # print(datetime.datetime.strftime(row[4], '%d-%b-%Y %H:%M:%S'))
+        add_no = list(row)
+        add_no.insert(0, i)
+        add_no[5] = datetime.datetime.strftime(row[4], '%d-%b-%Y')
+        bt.append_row(add_no)
+        i+=1
+
+    print(bt)
+    # option()
+
+# option()
+a = [1,2,3,4]
+a[3] = 10
+print(a)
 
 # Home-work
 # 1. Show table data in right formate.

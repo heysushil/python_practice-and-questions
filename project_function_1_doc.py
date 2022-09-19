@@ -27,7 +27,7 @@
 #                 ----------------------------------
 #                 Your Input values: 1 + 2
 #                 ----------------------------------
-#                 Output           = Result 
+#                 Output  AQER YUIO ADFGHJKLZXBB<>?":{}|"       = Result 
 #                 ----------------------------------
 # 3. User input par agar user galat input deta hai to usko error message show karna hai:
 #     ----------------------------------
